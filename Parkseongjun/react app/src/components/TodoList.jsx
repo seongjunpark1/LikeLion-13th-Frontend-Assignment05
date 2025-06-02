@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
-import Diary from "./Diary";
 
 
 export default function TodoList() {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useLocalStorage("todos", []);
     const [input, setInput] = useState("");
+    
 
     // .trim 사용 시 공백 제거
     const handleAdd = () => {
